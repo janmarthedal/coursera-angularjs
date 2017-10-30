@@ -13,6 +13,7 @@
         ctrl.found = [];
         ctrl.emptySearch = false;
         ctrl.doSearch = function() {
+            ctrl.found = [];
             if (ctrl.term === '') {
                 ctrl.emptySearch = true;
             } else {

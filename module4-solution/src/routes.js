@@ -1,9 +1,14 @@
 (function() {
+    'use strict';
+
     angular.module('MenuApp')
         .config(RoutesConfig);
 
-    RoutesConfig.$inject = ['$stateProvider'];
-    function RoutesConfig($stateProvider) {
+    RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function RoutesConfig($stateProvider, $urlRouterProvider) {
+
+        $urlRouterProvider.otherwise('/');
+
         $stateProvider
             .state('home', {
                 url: '/',
@@ -23,7 +28,7 @@
                 url: '/items/{category}',
                 templateUrl: 'src/items.template.html',
                 resolve: {
-                    items: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
+                    data: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
                         return MenuDataService.getItemsForCategory($stateParams.category);
                     }]
                 },

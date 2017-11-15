@@ -13,7 +13,7 @@ function MenuItemField(MenuService, $q) {
             ctrl.$asyncValidators.menuitemfield = function(modelValue, viewValue) {
                 if (ctrl.$isEmpty(modelValue))
                     return $q.resolve();
-                return MenuService.hasMenuItem(modelValue);
+                return MenuService.getMenuItem(modelValue);
             };
         }
     };

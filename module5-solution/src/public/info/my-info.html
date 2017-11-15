@@ -12,11 +12,15 @@
             <dd>{{ infoCtrl.user.lastname }}</dd>
             <dt>Email</dt>
             <dd>{{ infoCtrl.user.email }}</dd>
+            <dt>Phone</dt>
+            <dd>{{ infoCtrl.user.phone }}</dd>
             <dt>Favorite Dish</dt>
             <dd>{{ infoCtrl.user.fav }}</dd>
         </dl>
         <img class="img-responsive" width="250" height="150"
              ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.user.fav}}.jpg" alt="Favorite Dish">
+        <p><strong>{{ infoCtrl.favTitle }}</strong></p>
+        <p>{{ infoCtrl.favDescription }}</p>
     </div>
 
 </div>

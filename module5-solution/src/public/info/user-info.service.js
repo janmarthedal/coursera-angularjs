@@ -20,6 +20,7 @@ function UserInfoService() {
             firstname: service.user.firstname,
             lastname: service.user.lastname,
             email: service.user.email,
+            phone: service.user.phone,
             fav: service.user.fav
         };
     };

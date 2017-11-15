@@ -38,10 +38,10 @@
     <div class="form-group">
       <label for="inputPhone" class="col-sm-2 control-label">Phone</label>
       <div class="col-sm-10">
-        <input id="inputPhone" type="text" name="phone" placeholder="Phone ###-###-####"
+        <input id="inputPhone" type="text" name="phone" placeholder="Phone ###-###-####" required
                class="form-control" ng-model="reg.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
         <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
-          Phone must be in the format ###-###-####.
+          Phone must be in the format ###-###-####
         </span>
       </div>
     </div>

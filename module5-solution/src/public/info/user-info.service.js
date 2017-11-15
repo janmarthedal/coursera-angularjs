@@ -8,17 +8,11 @@ angular.module('common')
 function UserInfoService() {
     var service = this;
 
-    /*service.user = {
+    service.user = {
         firstname: '',
         lastname: '',
         email: '',
         fav: ''
-    };*/
-    service.user = {
-        firstname: 'Svend',
-        lastname: 'Dellepude',
-        email: 's@d',
-        fav: 'A1'
     };
 
     service.getUserInfo = function() {

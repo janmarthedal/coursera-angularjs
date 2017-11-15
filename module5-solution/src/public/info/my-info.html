@@ -1,5 +1,23 @@
-<div class="container">
-    <h2>My Info</h2>
-  
+<div class="container" ng-controller="MyInfoController as infoCtrl">
+    <h2 class="text-center">My Info</h2>
+
+    <div ng-if="!infoCtrl.user.firstname">
+        Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+    </div>
+    <div ng-if="infoCtrl.user.firstname">
+        <dl class="dl-horizontal">
+            <dt>First name</dt>
+            <dd>{{ infoCtrl.user.firstname }}</dd>
+            <dt>Last name</dt>
+            <dd>{{ infoCtrl.user.lastname }}</dd>
+            <dt>Email</dt>
+            <dd>{{ infoCtrl.user.email }}</dd>
+            <dt>Favorite Dish</dt>
+            <dd>{{ infoCtrl.user.fav }}</dd>
+        </dl>
+        <img class="img-responsive" width="250" height="150"
+             ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.user.fav}}.jpg" alt="Favorite Dish">
+    </div>
+
 </div>
   

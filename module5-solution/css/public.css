@@ -183,3 +183,9 @@ h3.menu-item-title {
     width: 100%;
   }
 }
+
+/** Sign Up form **/
+.ng-touched.ng-invalid {
+  border-color: red;
+  border-width: 2px;
+}

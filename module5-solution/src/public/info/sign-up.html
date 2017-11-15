@@ -1,5 +1,57 @@
 <div class="container">
-    <h2>Sign Up</h2>
-  
-  </div>
+  <h2 class="text-center">Sign Up</h2>
+
+  <form class="form-horizontal" name="regForm" novalidate>
+    <div class="form-group">
+      <label for="inputFirst" class="col-sm-2 control-label">First name</label>
+      <div class="col-sm-10">
+        <input id="inputFirst" type="text" name="firstname" class="form-control"
+               placeholder="Enter your first name" required ng-model="reg.user.firstname">
+        <span ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
+          You must enter your first name
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputLast" class="col-sm-2 control-label">Last name</label>
+      <div class="col-sm-10">
+        <input id="inputLast" type="text" name="lastname" class="form-control"
+              placeholder="Enter your last name" required ng-model="reg.user.lastname">
+        <span ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">
+          You must enter your last name
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-10">
+        <input id="inputEmail" type="email" name="email" placeholder="Email" class="form-control"
+              required ng-model="reg.user.email">
+        <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+          Must be a valid email address: handle@domain format
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPhone" class="col-sm-2 control-label">Phone</label>
+      <div class="col-sm-10">
+        <input id="inputPhone" type="text" name="phone" placeholder="Phone ###-###-####"
+               class="form-control" ng-model="reg.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+          Phone must be in the format ###-###-####.
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button class="btn btn-default" ng-disabled="regForm.$invalid" ng-click="reg.submit()">Sign Up</button>
+      </div>
+    </div>
+
+  </form>
+</div>
   
